@@ -1,4 +1,4 @@
-/*Resturants - Can I Have a menu? What is there to drink? Can I Have...? How much is the bill? What are the specials for today? Can I have a new ...(Fork, Spoon, Napkin)? Where is ... ___?  What do you call the waiter, Waitress, Chef, Manager, Busboy, Busgirl?  
+/*R<esturants - Can I Have a menu? What is there to drink? Can I Have...? How much is the bill? What are the specials for today? Can I have a new ...(Fork, Spoon, Napkin)? Where is ... ___?  What do you call the waiter, Waitress, Chef, Manager, Busboy, Busgirl?  
 
 Travel - Can you take me to? Where is ... ?  How far away is ... ? When does the ... (train, bus, ...) arrive? Are there any tourist attractions? Where is a good resturant? Where are there fun (Family) activities? 
 

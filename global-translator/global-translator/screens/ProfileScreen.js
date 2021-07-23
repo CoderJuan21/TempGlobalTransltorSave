@@ -21,7 +21,7 @@ export default class ProfileScreen extends React.Component {
       name: '',
       account: '',
       image: '',
-      email:'juan@gmail.com',
+      email:'',
       id:''
     };
   }
@@ -55,17 +55,29 @@ db.collection("users").doc(this.state.id).update({
   render() {
     return (
       <View style={styles.container}>
+       <ImageBackground
+          style={{ width: '100%', height: '100%' }}
+          source={require('../assets/GlobalTranslator.png')}>
         <View style={styles.header}>
-          <AntDesign name="arrowleft" size={24} color="black" />
-          <Text style={styles.headerTitle}> Profile Screen </Text>
-          <Text style={{ fontSize: 16, color: 'black' }}>Save</Text>
+
+
+          <TouchableOpacity
+            style={{position:'absolute',bottom:0}}
+            onPress={() => {
+              this.props.navigation.navigate('Home');
+            }}>
+            <AntDesign name="logout" color="black" size={RFValue(20)} />
+          </TouchableOpacity>
+
+          
+          <Text style={{fontSize:20,fontWeight:'bold', alignSelf:'center'}}> Profile Screen </Text>
         </View>
         <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
             padding: 10,
-            margin: 20,
+            margin: 0,
           }}>
           <Avatar
             rounded
@@ -76,17 +88,22 @@ db.collection("users").doc(this.state.id).update({
             }}
           />
         </View>
+        <View style={{
+              width: '100%',
+              padding: 8,
+              marginTop: 50,
+              justifyContent: 'center',
+        }}>
         <Text style={{paddingLeft:40, fontWeight:'bold'}}> Account </Text>
         <TextInput
           style={{
-            borderWidth: 1,
+            borderBottomWidth:2,
             borderRadius: 10,
             width: '80%',
             alignSelf: 'center',
             height: 30,
-            backgroundColor: '#eee',
-            borderColor: '#eee',
             paddingLeft: 10,
+            backgroundColor:'lightgrey'
           }}
           placeholder="Account"
           value={this.state.account}
@@ -94,36 +111,49 @@ db.collection("users").doc(this.state.id).update({
             this.setState({ account: val });
           }}
         />
+        </View>
 
+  <View style={{
+              width: '100%',
+              padding: 8,
+              marginTop: -20,
+              justifyContent: 'center',
+        }}>
 <Text style={{paddingLeft:40, fontWeight:'bold', marginTop:20}}> Name </Text>
 <TextInput style={{
-  borderWidth:2,
+  borderBottomWidth:2,
   borderRadius:10,
   width:'80%',
   alignSelf:'center',
   height:30,
-  backgroundColor:'grey',
-  borderColor:'grey',
-  paddingLeft:10
+  paddingLeft:10,
+  backgroundColor:'lightgrey'
 }}
 placeholder="First Last"
 value={this.state.name}
  onChangeText={(val) => {
             this.setState({ name: val });
           }}/>
-          
+          </View>
+
+  <View style={{
+              width: '100%',
+              padding: 8,
+              marginTop: -20,
+              justifyContent: 'center',
+        }}>
 <Text style={{paddingLeft:40, fontWeight:'bold', marginTop:20}}> Email </Text>
 <TextInput style={{
-  borderWidth:2,
+  borderBottomWidth:2,
   borderRadius:10,
   width:'80%',
   alignSelf:'center',
   height:30,
-  backgroundColor:'grey',
-  borderColor:'grey',
-  paddingLeft:10
+  paddingLeft:10,
+  backgroundColor:'lightgrey'
 }}
 placeholder={this.state.email}/>
+</View>
 
 <TouchableOpacity
 style={{
@@ -136,10 +166,11 @@ style={{
   backgroundColor:"green",
   padding:10
 }}
-onPress={this.onSubmit}>
 value={this.state.email}
+onPress={this.onSubmit}>
 <Text style={{textAlign:'center', color:'white',}}>Confirm</Text>
 </TouchableOpacity>
+</ImageBackground>
       </View>
     );
   }

@@ -110,15 +110,15 @@ return fetch(url)
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>ChooseALanguageYouWantToTranslate</Text>
+          <Text style={styles.headerText}>Choose A Language You Want To Translate</Text>
         </View>
         <View style={styles.translateContainer}>
           <View
             style={{
               flex: 1,
               borderColor: 'black',
-              borderWidth: 2.5,
-              borderRadius: 30,
+              borderWidth: 2,
+              borderRadius: 20,
               alignItems: 'center',
             }}>
            
@@ -131,7 +131,7 @@ return fetch(url)
           <View
             style={{
               borderColor: 'black',
-              borderWidth: 1,
+              borderWidth: 2,
               borderRadius: 20,
               flex: 1,
               alignItems: 'center',
@@ -228,24 +228,21 @@ const styles = StyleSheet.create({
     padding: 10
   },
    headerContainer: {
-    borderBottomWidth: 2,
-    borderBottomColor: 'black',
     marginHorizontal: 30,
     marginTop: 5,
     height:30,
-    borderWidth:2,
     width:280,
     marginBottom:20,
   },
   headerText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '600',
     marginBottom: 40,
     color:"black",
     marginLeft:0,
     marginTop:10,
     alignItems:'center',
-    
+    justifyContent:'center',
   },
    translateContainer: {
     paddingTop: 15,
@@ -253,7 +250,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:80
+    marginTop:80,
   },
   translateText: {
     fontSize: 10,

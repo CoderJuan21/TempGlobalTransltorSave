@@ -34,11 +34,18 @@ const Stack = createStackNavigator({
 })
 
 const AppTabNavigator = createBottomTabNavigator({
-  Stack : {
+   Stack : {
     screen: Stack,
     navigationOptions :{
       tabBarIcon : <Icon name = 'home' size={25}/>,
       tabBarLabel : "Category",
+    }
+  },
+   Profile: {
+    screen: ProfileScreen,
+    navigationOptions :{
+      tabBarIcon : <Icon name = 'home' size={25}/>,
+      tabBarLabel : "Profile",
     }
   },
   Save: {
@@ -48,29 +55,22 @@ const AppTabNavigator = createBottomTabNavigator({
       tabBarLabel : "Save",
     }
   },
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions :{
-      tabBarIcon : <Icon name = 'home' size={25}/>,
-      tabBarLabel : "Profile",
-    }
-  },
-  Translate: {
+   Translate: {
     screen: TranslateScreen,
     navigationOptions :{
       tabBarIcon : <Icon name='home' size={25} />,
       tabBarLabel : "Translate",
     }
-  }
+  },
 });
 
 const TabNavigator = createSwitchNavigator({
-  SignUpScreen:{screen:SignUpScreen},
+  Home:{screen:Home},
   AppTabNavigator:{screen:AppTabNavigator},
   LoadingScreen:{screen:LoadingScreen},
-  Home:{screen:Home},
-  LoginScreen:{screen:LoginScreen},
   ForgotPassword:{screen:ForgotPassword},
+  SignUpScreen:{screen:SignUpScreen},
+  LoginScreen:{screen:LoginScreen},
 });
 
 export default createAppContainer(TabNavigator)

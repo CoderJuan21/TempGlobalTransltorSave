@@ -60,7 +60,16 @@ export default function Home() {
           />
         </View>
       </Card>
-
+ <TouchableOpacity
+            style={styles.logOutButton}
+            onPress={() => {
+              this.props.navigation.navigate("LoginScreen");
+              firebase.auth().signOut()
+            }}
+          > 
+          <AntDesign name="logout" color="#ffc34b" size={RFValue(20)}/>
+            <Text>Go Back</Text>
+          </TouchableOpacity>
     </View>
   );
 }
